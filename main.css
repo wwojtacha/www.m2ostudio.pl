@@ -1,0 +1,397 @@
+@font-face {
+    font-family: "heneczek";
+    src: url("/heneczek-regular-1508762860.otf");
+}
+
+@media only screen and (max-device-width: 720px) {
+    body {
+        width: 700px;
+    }
+        
+    header {
+        min-height: 50px;
+        height: 50px;
+    }
+    
+}
+
+@media only screen and (max-device-width: 480px) {
+    body {
+        width: 440px;
+    }
+        
+    header {
+        min-height: 30px;
+        height: 30px;
+        min-width: 440px;
+        width: 440px;
+    }
+    
+}
+
+html, body { height: 100%;}
+
+body {
+    margin: 0 auto;
+	min-height: 1200px;
+/*	padding: 0 0 50px 0;*/
+	width: 1200px;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
+    grid-row-gap: 3%;
+    font-family: "Monserrat", sans-serif;
+/*    margin-left: 5%;*/
+/*    margin-right: 5%;*/
+ 
+}
+
+header {
+    position: fixed;
+    display: inline-flex;
+    min-height: 100px;
+    background-color: white;
+    top: -0.5%;
+    min-width: 600px;
+    width: 1200px;
+    height: 100px;
+    z-index: 2500;
+    justify-content: space-between;
+}
+
+#logo {
+    max-height: 100%;
+    max-width: 100%;
+    margin-top: -0.1%;
+    color: black;
+}
+
+nav {
+    align-self: center;
+}
+
+.nav-bar {
+    font-size: 0.8em;
+    color: black;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 2em;
+}
+
+a:focus {
+     border-color: red;  
+}
+
+#home {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-template-rows: auto;
+    grid-column-gap: 5%;
+}
+
+#ruler {
+    grid-column: 1 / 3;
+    grid-row: 1;
+    max-width: 100%;
+    place-self: stretch stretch;
+    filter: brightness(110%);
+}
+
+#home p {
+    grid-column: 2 / 3;
+    grid-row: 1;
+    z-index: 100;
+    justify-self: center;
+    margin-top: 45%;
+    margin-right: 17%;
+    text-align: justify;
+    line-height: 1.6;
+}
+
+.offer-header {
+    place-self: end end;
+    font-weight: bold;
+}
+
+#offer {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: repeat (12, 1fr);
+    
+}
+
+#offer_picture {
+    grid-column: 1 / 2;
+    grid-row: 1 / 12;
+    place-self: stretch stretch;
+    max-width: 100%;
+}
+
+#offer_box {
+    background: rgba(255, 255, 255, 0.8);
+    grid-column: 1 / 2;
+    grid-row: 1 / 12;
+    height: 100%;
+    width: 100%;
+    margin-left: 0%;
+    max-width: 60%;
+    place-self: start center;
+    z-index: 100;
+}
+
+#offer h3 {
+    grid-column: 1 / 2;
+    grid-row: 3;
+    padding-top: 12%;
+    place-self: end center;
+    z-index: 1000;
+}
+
+#offer_p {
+    grid-column: 1 / 2;
+    grid-row: 4 / 12;
+    text-align: justify;
+    max-width: 50%;
+    place-self: end center;
+    z-index: 1000;
+}
+
+#offer_p p {
+    padding-bottom: 4%;
+}
+
+#portfolio {
+    background: rgba(209, 203, 193, 0.2);
+    display: grid;
+    grid-template-columns: repeat(6, 1fr);
+    grid-template-rows: 1fr 1fr;
+}
+
+#img1, #img2, #img3, #img4, #img5, #img6 {
+    
+    height: 250px;
+    width: 250px;
+    place-self: center center;
+}
+
+#img1, #img2, #img3 {
+        padding-top: 33%;
+}
+
+#img1 {
+    grid-column: 1 / 3;
+    grid-row: 1;
+}
+
+#img2 {
+    grid-column: 3 / 5;
+    grid-row: 1;
+}
+
+#img3 {
+    grid-column: 5 / 7;
+    grid-row: 1;
+}
+
+#img4 {
+    grid-column: 2 / 4;
+    grid-row: 2;
+}
+
+#img5 {
+    grid-column: 4 / 6;
+    grid-row: 2;
+}
+
+ /* Style the Image Used to Trigger the Modal */
+.myImg {
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+.myImg:hover {opacity: 0.7;}
+
+/* The Modal (background) */
+.modal {
+    display: none; /* Hidden by default */
+    position: fixed; /* Stay in place */
+    z-index: 5000; /* Sit on top */
+    padding-top: 100px; /* Location of the box */
+    left: 0;
+    top: 0;
+    width: 100%; /* Full width */
+    height: 100%; /* Full height */
+    overflow: auto; /* Enable scroll if needed */
+    background-color: rgb(0,0,0); /* Fallback color */
+    background-color: rgba(0,0,0,1); /* Black no/ opacity */
+}
+
+/* Modal Content (Image) */
+.modal-content {
+    margin: auto;
+    display: block;
+/*    width: 80%;*/
+    max-width: 100vw;
+    max-height: 90vh;
+
+  
+}
+
+/* Caption of Modal Image (Image Text) - Same Width as the Image */
+#caption {
+    margin: auto;
+    display: block;
+    width: 80%;
+    max-width: 700px;
+    text-align: center;
+    color: #ccc;
+    padding: 10px 0;
+    height: 150px;
+}
+
+/* Add Animation - Zoom in the Modal */
+.modal-content, #caption {
+    animation-name: zoom;
+    animation-duration: 0.6s;
+    z-index: 5000;
+}
+
+@keyframes zoom {
+    from {transform:scale(0)}
+    to {transform:scale(1)}
+}
+
+/* The Close Button */
+.close {
+    position: absolute;
+    top: 15px;
+    right: 35px;
+    color: #f1f1f1;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
+}
+
+/* 100% Image Width on Smaller Screens */
+@media only screen and (max-width: 700px){
+    .modal-content {
+        width: 100%;
+    }
+}
+
+#contact {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: repeat(10, 1fr);
+    grid-column-gap: 5%;
+}
+
+#contact_picture {
+    grid-column: 1 / 4;
+    grid-row: 1 / 12;
+    max-width: 100%;
+    place-self: stretch stretch;
+}
+
+#a1 {
+    grid-column: 2 / 3;
+    grid-row: 3;
+    place-self: center start;
+}
+
+#a2 {
+    grid-column: 3 / 4;
+    grid-row: 3;
+    place-self: center start;
+}
+
+#a3 {
+    grid-column: 2 / 3;
+    grid-row: 4;
+    place-self: start start;
+}
+
+#a4 {
+    grid-column: 3 / 4;
+    grid-row: 4;
+    place-self: start start;
+
+}
+
+#a1, #a2, #a3, #a4 {
+    font-weight: bold;
+}
+
+#contact_box {
+    grid-column: 2 / 4;
+    grid-row: 4 / 12;
+    min-width: 30%;
+    max-width: 83%;
+    min-height: 20%;
+    max-height: 52%;
+}
+
+input, textarea{
+    background: transparent;
+    font-family: "Montserrat", sans-serif;
+    font-weight: bold;
+}
+
+form {
+    grid-column: 2 / 4;
+    grid-row: 5 / 12;
+    min-width: 30%;
+    max-width: 80%;
+    min-height: 20%;
+    max-height: 100%;
+    padding: 0px;
+    padding-top: 0%;
+    place-self: start start;
+    margin-right: 5%;
+}
+
+#name, #email, #subject, #message {
+    border: none;
+    border-bottom: 2px solid;
+    padding-top: 20px;
+    width: 100%;
+}
+
+#message {
+    height: 10em;
+    width: 99.4%
+}
+
+#attachment {
+    margin-top: 5%;
+}
+
+#submit {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    border-radius: 25px;
+    padding: 10px;
+    margin-top: 5%;
+    margin-left: 40%;
+
+}
+
+footer {
+    grid-column: auto;
+    grid-row: auto;
+    place-self: center center;
+    padding: 10px;
+    background: rgba(220, 220, 220);
+    width: 100%;
+    text-align: center;
+}
+
